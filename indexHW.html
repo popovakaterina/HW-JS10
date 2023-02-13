@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="data2.js" ></script>
+    <style>
+        body {
+            background-color: rgb(224, 193, 206);
+        }
+       .header {
+        display: flex;
+        justify-content: center;
+       }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .card {
+            width: 300px;
+            border: 1px solid;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: rgb(254, 254, 254);
+            
+        }
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+        <div class="header">
+            <h1>Makeup brands and product info</h1>
+        </div>
+    
+        <div class="content" > </div>
+    
+  
+    <script>
+        const contentEl = document.querySelector('.content');
+        dataInfo.cosmetics.forEach(cosmetic => {
+        const  cardEl = document.createElement('div');
+        cardEl.classList.add('card');
+
+        const nameEl = document.createElement ('h1');
+        nameEl.textContent = cosmetic.name;
+        cardEl.appendChild(nameEl);
+
+        const  priceEl = document.createElement('p');
+        priceEl.textContent = cosmetic.price;
+        cardEl.appendChild(priceEl);
+
+        const descriptionEl = document.createElement('p');
+        descriptionEl.textContent = cosmetic. description;
+        cardEl.appendChild(descriptionEl);
+
+        const cosmeticFirstImgEl = document.createElement('img');
+        cosmeticFirstImgEl.src = cosmetic. image_link;
+        cardEl.appendChild(cosmeticFirstImgEl);
+
+        contentEl.appendChild(cardEl);
+        });
+       
+
+
+
+    </script>
+</body>
+</html>
